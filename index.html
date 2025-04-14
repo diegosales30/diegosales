@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Sales - Livraria</title>
+    <style>
+        :root {
+            --primary-color: #131921;
+            --secondary-color: #232f3e;
+            --accent-color: #febd69;
+            --text-color: #333;
+            --background-color: #f8f8f8;
+            --card-bg: #fff;
+            --button-color: #f0c14b;
+            --button-hover: #ddb347;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary-color: #1a1a1a;
+            --secondary-color: #2d2d2d;
+            --accent-color: #febd69;
+            --text-color: #f1f1f1;
+            --background-color: #121212;
+            --card-bg: #2d2d2d;
+            --button-color: #f0c14b;
+            --button-hover: #ddb347;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .dark-mode-toggle {
+            background-color: var(--accent-color);
+            border: none;
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #e0a94d;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .book-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .book-card {
+            width: 250px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .book-image {
+            height: 300px;
+            background-color: #e1e1e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .book-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .book-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .book-author {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .buy-button {
+            background-color: var(--button-color);
+            color: #111;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: block;
+            width: 100%;
+        }
+
+        .buy-button:hover {
+            background-color: var(--button-hover);
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .book-grid {
+                gap: 1rem;
+            }
+            
+            .book-card {
+                width: calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Diego Sales</div>
+        <button id="darkModeToggle" class="dark-mode-toggle">Modo Noturno</button>
+    </header>
+
+    <main>
+        <div class="book-grid">
+            <!-- Livro 1 -->
+            <div class="book-card">
+                <div class="book-image">
+                  <img src="./assets/capa.jpg" alt="capa" style="width: 320px; height: 320px;"/>
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Surviving guide</h3>
+                    <p class="book-author">Felip s</p>
+                    <button class="buy-button">Comprar Livro</button>
+                </div>
+            </div>
+
+            <!-- Livro 2 -->
+            <div class="book-card">
+                <div class="book-image"><img src="./assets/livro2.jpg" alt="capa" style="width: 320px; height: 320px;"/></div>
+                <div class="book-info">
+                    <h3 class="book-title">Stress free Coloring book</h3>
+                    <p class="book-author">Relax ai</p>
+                    <button class="buy-button">Comprar Livro</button>
+                </div>
+            </div>
+
+            <!-- Livro 3 -->
+            <div class="book-card">
+                <div class="book-image"><img src="./assets/livro3.jpg" alt="capa" style="width: 320px; height: 320px;"/></div>
+                <div class="book-info">
+                    <h3 class="book-title">Amazing wild birds</h3>
+                    <p class="book-author">Relax ai</p>
+                    <button class="buy-button">Comprar Livro</button>
+                </div>
+            </div>
+
+            <!-- Livro 4 -->
+            <div class="book-card">
+                <div class="book-image"><img src="./assets/livro4.jpg" alt="capa" style="width: 320px; height: 320px;"/></div>
+                <div class="book-info">
+                    <h3 class="book-title">Total relaxation</h3>
+                    <p class="book-author">Relax ai</p>
+                    <button class="buy-button">Comprar Livro</button>
+                </div>
+            </div>
+
+            <!-- Livro 5 -->
+            <div class="book-card">
+                <div class="book-image"><img src="./assets/livro5.jpg" alt="capa" style="width: 320px; height: 320px;"/></div>
+                <div class="book-info">
+                    <h3 class="book-title">Amazonia wild</h3>
+                    <p class="book-author">Relax ai</p>
+                    <button class="buy-button">Comprar Livro</button>
+                </div>
+            </div>
+
+            <!-- Livro 6 -->
+            <div class="book-card">
+                <div class="book-image"><img src="./assets/livro6.jpg" alt="capa" style="width: 320px; height: 320px;"/></div>
+                <div class="book-info">
+                    <h3 class="book-title">Wildlife</h3>
+                    <p class="book-author">Relax ai</p>
+                    <button class="buy-button">Comprar Livro</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <span>Contato:</span>
+            <a href="mailto:diegofelipesales23@gmail.com">diegofelipesales23@gmail.com</a>
+        </div>
+        <p>&copy; 2025 Diego Sales - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = 'Modo Claro';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                darkModeToggle.textContent = 'Modo Noturno';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+
+        // Verificar preferência salva
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = 'Modo Claro';
+        }
+    </script>
+</body>
+</html>
